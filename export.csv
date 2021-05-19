@@ -1,18 +1,18 @@
-﻿food;precio;tiempo;nutricion;relacion
-pizza;alto medio bajo;rapido medio lento;media alta;pan carne
-sushi;alto medio bajo;rapido medio ;alta media;mariscos
-pasta;alto medio ;medio lento;media ;carne pan
-lasagna;medio bajo;rapido medio lento;media alta;pan carne
-ensalada;medio bajo;rapido;media;
-ensalada de pollo;medio alto;rapido;media alta;ensalada carne
-ensalada de atun;medio alto;rapido;media alta;ensalada mariscos
-tacos;medio bajo;rapido medio;bajo;
-tacos de res;medio bajo;rapido medio;bajo medio;tacos carne
-tacos al pastor;medio bajo;rapido medio;bajo medio;tacos carne
-hamburguesa;medio alto;rapido medio;medio alta;pan carne
-mariscos;alto medio bajo;medio lento;alta;
-pan;medio bajo;medio lento;media;
-curry;alto medio;rapido medio lento;media alta;
-sashimi;alto;medio;alta;mariscos
-carne;alto medio bajo;medio lento;medio alta;
-milanesa;medio alto;medio rapido;medio;carne
+﻿food,precio,tiempo,nutricion,relacion
+pizza,alto medio bajo,rapido medio lento,media alta,pan carne
+sushi,alto medio bajo,rapido medio ,alta media,mariscos
+pasta,alto medio ,medio lento,media ,carne pan
+lasagna,medio bajo,rapido medio lento,media alta,pan carne
+ensalada,medio bajo,rapido,media,
+ensalada de pollo,medio alto,rapido,media alta,ensalada carne
+ensalada de atun,medio alto,rapido,media alta,ensalada mariscos
+tacos,medio bajo,rapido medio,bajo,
+tacos de res,medio bajo,rapido medio,bajo medio,tacos carne
+tacos al pastor,medio bajo,rapido medio,bajo medio,tacos carne
+hamburguesa,medio alto,rapido medio,medio alta,pan carne
+mariscos,alto medio bajo,medio lento,alta,
+pan,medio bajo,medio lento,media,
+curry,alto medio,rapido medio lento,media alta,
+sashimi,alto,medio,alta,mariscos
+carne,alto medio bajo,medio lento,medio alta,
+milanesa,medio alto,medio rapido,medio,carne
