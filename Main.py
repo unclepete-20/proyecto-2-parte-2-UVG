@@ -6,9 +6,12 @@ time =[]
 nutricion =[]
 relation =[]
 platillos=[]
+timeGeneral=["rapido","medio","lento"]
+nutricionGeneral=["alta","media","baja"]
+priceGeneral=["alto","medio","bajo"]
 #es para guardar lo que el consumidor desea
 myfood =[]
-myprive =[]
+myprice =[]
 mytime=[]
 mynutricion=[]
 #lectura de los datos y separarlos segun su categoria
@@ -25,27 +28,32 @@ with open('export.csv', 'r') as csvDataFile:
         #este serivara para guardar los tipos de platillos en el platillos
         if(i!=0):
             foodtype = row[4].split()
-            print(foodtype)
             for add in foodtype:
                 #si lo contiene no lo guardara
                 if(list.__contains__(platillos,add)):
-                    print("")
+                    True
                 else:
                     platillos.append(add)
         else:
             i=i+1
 
 
-print(food)
-print(price)
-print(time)
-print(nutricion)
-print(relation)
-print(platillos)
+#print(food)
+#print(price)
+#print(time)
+#print(nutricion)
+#print(relation)
+#print(platillos)
 #menu
 i=0
 ciclo = True
-while ciclo == True:
+while ciclo:
+    print("___________________________________")
+    print(myfood)
+    print(mytime)
+    print(mynutricion)
+    print(myprice)
+    print("___________________________________")
     print("1. Escoger platillos")
     print("2. Escoger tiempo de entrega")
     print("3. Escoger contenido nutricional")
@@ -53,19 +61,124 @@ while ciclo == True:
     print("5. Buscar")
     print("6. Salir")
     opcion = input("Ingrese una opcion: ")
+    print("___________________________________")
     #Escoger tipos de platillos de interes
     if(opcion=="1"):
         #mostrar los platillos dispobibles, para este se utilizara el del realcion y mostraremos cada una
-        print("hola")
+        comida = True
+        while comida:
+            for tipoPlatillo in platillos:
+                print(tipoPlatillo)
+                print("1. Agregar")
+                print("2. Siguiente")
+                print("3. Quitar")
+                print("4. Regresar")
+                op = input("Ingrese una opcion: ")
+                if(op=="1"):
+                    if(list.__contains__(myfood,tipoPlatillo)):
+                        print("Ya lo contiene")
+                    else:
+                        myfood.append(tipoPlatillo)
+                elif(op=="2"):
+                    True
+                elif(op=="3"):
+                    if(list.__contains__(myfood,tipoPlatillo)):
+                        myfood.remove(tipoPlatillo)
+                        print("Se quito el platillo")
+                elif(op=="4"):
+                    comida=False
+                    break
+                else:
+                    print("Error ingresa solo del 1-3")
+                print("___________________________________")
+            
     #escoger tiempo
     elif(opcion=="2"):
-        print("hola")
+        tiempo = True
+        while tiempo:
+            for tipoTiempo in timeGeneral:
+                    print(tipoTiempo)
+                    print("1. Agregar")
+                    print("2. Siguiente")
+                    print("3. Quitar")
+                    print("4. Regresar")
+                    op = input("Ingrese una opcion: ")
+                    if(op=="1"):
+                        if(list.__contains__(mytime,tipoTiempo)):
+                            print("Ya lo contiene")
+                        else:
+                            mytime.append(tipoTiempo)
+                    elif(op=="2"):
+                        True
+                    elif(op=="3"):
+                        if(list.__contains__(mytime,tipoTiempo)):
+                            mytime.remove(tipoTiempo)
+                            print("Se quito el tiempo")
+                    elif(op=="4"):
+                        tiempo=False
+                        break
+                    else:
+                        print("Error ingresa solo del 1-3")
+                    print("___________________________________")
+        
     #escoger contenido nutricional
     elif(opcion=="3"):
-        print("hola")
+        nutri = True
+        while nutri:
+            for tipoNutricion in nutricionGeneral:
+                    print(tipoNutricion)
+                    print("1. Agregar")
+                    print("2. Siguiente")
+                    print("3. Quitar")
+                    print("4. Regresar")
+                    op = input("Ingrese una opcion: ")
+                    if(op=="1"):
+                        if(list.__contains__(mynutricion,tipoNutricion)):
+                            print("Ya lo contiene")
+                        else:
+                            mynutricion.append(tipoNutricion)
+                    elif(op=="2"):
+                        True
+                    elif(op=="3"):
+                        if(list.__contains__(mynutricion,tipoNutricion)):
+                            mynutricion.remove(tipoNutricion)
+                            print("Se quito el tipo de nutricion")
+                    elif(op=="4"):
+                        nutri=False
+                        break
+                    else:
+                        print("Error ingresa solo del 1-3")
+                    print("___________________________________")
+    
     #escoger precio
     elif(opcion=="4"):
-        print("hola")
+        precio = True
+        while precio:
+            for tipoPrecio in priceGeneral:
+                    print(tipoPrecio)
+                    print("1. Agregar")
+                    print("2. Siguiente")
+                    print("3. Quitar")
+                    print("4. Regresar")
+                    op = input("Ingrese una opcion: ")
+                    if(op=="1"):
+                        if(list.__contains__(myprice,tipoPrecio)):
+                            print("Ya lo contiene")
+                        else:
+                            myprice.append(tipoPrecio)
+                    elif(op=="2"):
+                        True
+                    elif(op=="3"):
+                        if(list.__contains__(myprice,tipoPrecio)):
+                            myprice.remove(tipoPrecio)
+                            print("Se quito el precio")
+                    elif(op=="4"):
+                        precio=False
+                        break
+                    else:
+                        print("Error ingresa solo del 1-3")
+                    print("___________________________________")
+
     #buscar platillos que satisfacen con lo que se desea
     elif(opcion=="5"):
         print("hola")
