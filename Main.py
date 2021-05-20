@@ -14,6 +14,7 @@ myfood =[]
 myprice =[]
 mytime=[]
 mynutricion=[]
+foodInterest=[]
 #lectura de los datos y separarlos segun su categoria
 with open('export.csv', 'r') as csvDataFile:    
     csvReader = reader(csvDataFile)
@@ -42,7 +43,7 @@ with open('export.csv', 'r') as csvDataFile:
 #print(price)
 #print(time)
 #print(nutricion)
-#print(relation)
+print(relation)
 #print(platillos)
 #menu
 i=0
@@ -181,7 +182,42 @@ while ciclo:
 
     #buscar platillos que satisfacen con lo que se desea
     elif(opcion=="5"):
-        print("hola")
+        foodInterest.clear()
+        #para el tipo de platillo
+        if(len(myfood)!=0):
+            i=0
+            for types in relation:
+                for cliente in myfood:
+                    if(types.__contains__(cliente)):
+                        if(foodInterest.__contains__(food[i])):
+                            True
+                        else:
+                            foodInterest.append(food[i])                        
+                #aumentar
+                i=i+1
+
+        #para el tiempo, no funciona correctamente, ver como arreglarlo para que funcione adecuadamente
+        '''if(len(mytime)!=0):
+            i=0
+            for types in time:
+                verificar =True
+                for cliente in mytime:
+                    eliminar = False
+                    if (verificar):
+                        if(types.__contains__(cliente)):
+                            True
+                            break
+
+                if(eliminar):
+
+                    
+                #aumentar
+                i=i+1'''
+
+        #mostar resultado
+        for plato in foodInterest:
+            print(plato)
+        
     #terminar el ciclo
     elif(opcion=="6"):
         print("Gracias, espero que vuelvas pronto")
