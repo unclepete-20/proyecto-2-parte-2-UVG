@@ -14,7 +14,11 @@ myfood =[]
 myprice =[]
 mytime=[]
 mynutricion=[]
+#es para el resultado final
 foodInterest=[]
+timeInterest=[]
+priceInterest=[]
+nutricionInterest=[]
 #lectura de los datos y separarlos segun su categoria
 with open('export.csv', 'r') as csvDataFile:    
     csvReader = reader(csvDataFile)
@@ -43,11 +47,11 @@ with open('export.csv', 'r') as csvDataFile:
             i=i+1
 
 
-print(food)
+#print(food)
 #print(price)
 #print(time)
 #print(nutricion)
-print(relation)
+#print(relation)
 #print(platillos)
 #menu
 i=0
@@ -186,7 +190,13 @@ while ciclo:
 
     #buscar platillos que satisfacen con lo que se desea
     elif(opcion=="5"):
+        nutricioncopy=[]
+        #limpiar el original
         foodInterest.clear()
+        timeInterest.clear()
+        priceInterest.clear()
+        nutricionInterest.clear()
+
         #para el tipo de platillo
         if(len(myfood)!=0):
             i=0
@@ -196,31 +206,78 @@ while ciclo:
                         if(foodInterest.__contains__(food[i])):
                             True
                         else:
-                            foodInterest.append(food[i])                        
+                            #original
+                            foodInterest.append(food[i])
+                            timeInterest.append(time[i])   
+                            priceInterest.append(price[i])   
+                            nutricionInterest.append(nutricion[i])                 
+                #aumentar
+                i=i+1
+        
+        #solo para ver
+        '''print(foodInterest)
+        print(timeInterest)
+        print(nutricionInterest)
+        print(priceInterest)'''
+
+        #para el tiempo
+        if(len(mytime)!=0):
+            i=0
+            for types in timeInterest:
+                yes=0
+                for cliente in mytime:
+                    if(types.__contains__(cliente)):
+                        yes = yes + 1
+                #si es igual a 0 no tiene ninguno que cumpla con el requisito del tiempo y se quitara de la lista
+                if(yes==0):
+                    indice = foodInterest.index(foodInterest[i])
+                    foodInterest[indice]= "0"
+                    timeInterest[indice]= "0"
+                    priceInterest[indice]= "0"
+                    nutricionInterest[indice]= "0"
                 #aumentar
                 i=i+1
 
-        #para el tiempo, no funciona correctamente, ver como arreglarlo para que funcione adecuadamente
-        '''if(len(mytime)!=0):
+        #para nutricion 
+        if(len(mynutricion)!=0):
             i=0
-            for types in time:
-                verificar =True
-                for cliente in mytime:
-                    eliminar = False
-                    if (verificar):
-                        if(types.__contains__(cliente)):
-                            True
-                            break
-
-                if(eliminar):
-
-                    
+            for types in nutricionInterest:
+                yes=0
+                for cliente in mynutricion:
+                    if(types.__contains__(cliente)):
+                        yes = yes + 1
+                #si es igual a 0 no tiene ninguno que cumpla con el requisito del tiempo y se quitara de la lista
+                if(yes==0):
+                    indice = foodInterest.index(foodInterest[i])
+                    foodInterest[indice]= "0"
+                    timeInterest[indice]= "0"
+                    priceInterest[indice]= "0"
+                    nutricionInterest[indice]= "0"
                 #aumentar
-                i=i+1'''
+                i=i+1
 
-        #mostar resultado
+        #para precio
+        if(len(myprice)!=0):
+            i=0
+            for types in priceInterest:
+                yes=0
+                for cliente in myprice:
+                    if(types.__contains__(cliente)):
+                        yes = yes + 1
+                #si es igual a 0 no tiene ninguno que cumpla con el requisito del tiempo y se quitara de la lista
+                if(yes==0):
+                    indice = foodInterest.index(foodInterest[i])
+                    foodInterest[indice]= "0"
+                    timeInterest[indice]= "0"
+                    priceInterest[indice]= "0"
+                    nutricionInterest[indice]= "0"
+                #aumentar
+                i=i+1
+
+        #mostar resultado final
         for plato in foodInterest:
-            print(plato)
+            if(plato!="0"):
+                print(plato)
         
     #terminar el ciclo
     elif(opcion=="6"):
