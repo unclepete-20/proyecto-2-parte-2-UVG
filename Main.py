@@ -20,7 +20,7 @@ with open('export.csv', 'r') as csvDataFile:
     csvReader = reader(csvDataFile)
     i=0
     for row in csvReader:
-        print(row)
+        #print(row)
         #x=row[0]
         #y = x.split(";")
         #print(y)
