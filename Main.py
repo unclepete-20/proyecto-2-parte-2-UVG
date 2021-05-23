@@ -20,19 +20,19 @@ with open('export.csv', 'r') as csvDataFile:
     csvReader = reader(csvDataFile)
     i=0
     for row in csvReader:
-        #print(row)
-        x=row[0]
-        y = x.split(";")
-        print(y)
+        print(row)
+        #x=row[0]
+        #y = x.split(";")
+        #print(y)
 
-        food.append(y[0])
-        price.append(y[1])
-        time.append(y[2])
-        nutricion.append(y[3])
-        relation.append(y[4])
+        food.append(row[0])
+        price.append(row[1])
+        time.append(row[2])
+        nutricion.append(row[3])
+        relation.append(row[4])
         #este serivara para guardar los tipos de platillos en el platillos
         if(i!=0):
-            foodtype = y[4].split()
+            foodtype = row[4].split()
             for add in foodtype:
                 #si lo contiene no lo guardara
                 if(list.__contains__(platillos,add)):
@@ -43,7 +43,7 @@ with open('export.csv', 'r') as csvDataFile:
             i=i+1
 
 
-#print(food)
+print(food)
 #print(price)
 #print(time)
 #print(nutricion)
