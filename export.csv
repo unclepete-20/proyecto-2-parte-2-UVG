@@ -1,7 +1,7 @@
 food,precio,tiempo,nutricion,relacion
 pizza,alto medio bajo,rapido medio lento,media alta,carne
 sushi,alto medio bajo,rapido medio,alta media,mariscos
-pasta,alto medio,medio lento,media,carne pan
+pasta a la boloñesa,alto medio,medio lento,media,carne pan
 lasagna,medio bajo,rapido medio lento,media alta,pan carne
 ensalada,medio bajo,rapido,media,
 ensalada de pollo,medio alto,rapido,media alta,ensalada carne
@@ -16,3 +16,11 @@ curry,alto medio,rapido medio lento,media alta,
 sashimi,alto,medio,alta,mariscos
 carne ,alto medio bajo,medio lento,media alta,
 milanesa,medio alto,medio rapido,media,carne
+hilachas,medio,medio,alta,carne
+tapado de mariscos,alto,lento,alta,mariscos
+ceviche de camaron,alto,rapido,media,mariscos
+ceviche de pulpo,alto,rapido,media,mariscos
+ceviche de pescado,alto,rapido,media,mariscos
+tacos Tlaquepaque,medio,medio rapido,media,pan carne
+tacos de lengua,alto,medio,media,pan carne
+

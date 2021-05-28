@@ -1,4 +1,5 @@
 from csv import reader
+
 #contendra todo los datos del csv
 food =[]
 price =[]
@@ -9,16 +10,19 @@ platillos=[]
 timeGeneral=["rapido","medio","lento"]
 nutricionGeneral=["alta","media","baja"]
 priceGeneral=["alto","medio","bajo"]
+
 #es para guardar lo que el consumidor desea
 myfood =[]
 myprice =[]
 mytime=[]
 mynutricion=[]
+
 #es para el resultado final
 foodInterest=[]
 timeInterest=[]
 priceInterest=[]
 nutricionInterest=[]
+
 #lectura de los datos y separarlos segun su categoria
 with open('export.csv', 'r') as csvDataFile:    
     csvReader = reader(csvDataFile)
@@ -58,10 +62,7 @@ i=0
 ciclo = True
 while ciclo:
     print("___________________________________")
-    print(myfood)
-    print(mytime)
-    print(mynutricion)
-    print(myprice)
+    print("Bienvenido al Sistema de Recomendacion de Alimentos")
     print("___________________________________")
     print("1. Escoger platillos")
     print("2. Escoger tiempo de entrega")
@@ -71,16 +72,18 @@ while ciclo:
     print("6. Salir")
     opcion = input("Ingrese una opcion: ")
     print("___________________________________")
+
     #Escoger tipos de platillos de interes
     if(opcion=="1"):
+        
         #mostrar los platillos dispobibles, para este se utilizara el del realcion y mostraremos cada una
         comida = True
         while comida:
             for tipoPlatillo in platillos:
                 print(tipoPlatillo)
                 print("1. Agregar")
-                print("2. Siguiente")
-                print("3. Quitar")
+                print("2. Siguiente opcion")
+                print("3. Quitar seleccion")
                 print("4. Regresar")
                 op = input("Ingrese una opcion: ")
                 if(op=="1"):
@@ -277,11 +280,12 @@ while ciclo:
         #mostar resultado final
         for plato in foodInterest:
             if(plato!="0"):
+                print("\n======================= RECOMENDACIONES EN BASE A SU BUSQUEDA =======================\n")
                 print(plato)
         
     #terminar el ciclo
     elif(opcion=="6"):
-        print("Gracias, espero que vuelvas pronto")
+        print("\n¡Vuelve pronto al sistema de recomendaciones alimenticias :)!\n")
         ciclo=False
     #mostrar error
     else:
