@@ -1,20 +1,20 @@
 food,precio,tiempo,nutricion,relacion
 pizza,alto medio bajo,rapido medio lento,media alta,carne
 sushi,alto medio bajo,rapido medio,alta media,mariscos
-pasta a la boloñesa,alto medio,medio lento,media,carne pan
-lasagna,medio bajo,rapido medio lento,media alta,pan carne
+pasta a la boloñesa,alto medio,medio lento,media,carne pasta
+lasagna,medio bajo,rapido medio lento,media alta,pasta carne
 ensalada,medio bajo,rapido,media,
-ensalada de pollo,medio alto,rapido,media alta,ensalada carne
+ensalada de pollo,medio alto,rapido,media alta,ensalada pollo
 ensalada de atun,medio alto,rapido,media alta,ensalada mariscos
 tacos ,medio bajo,rapido medio,baja,
 tacos de res,medio bajo,rapido medio lento,baja media,tacos carne
 tacos al pastor,medio bajo,rapido medio lento,baja media,tacos carne
-hamburguesa,medio alto ,rapido medio,media alta,pan carne
-mariscos ,alto medio bajo,medio lento,alta,
-pan,medio bajo,medio lento,media,
-curry,alto medio,rapido medio lento,media alta,
+hamburguesa,medio alto,rapido medio,media alta,pan carne
+mariscos ,alto medio bajo,medio lento,alta,mariscos
+pan,medio bajo,medio lento,media,pan
+curry,alto medio,rapido medio lento,media alta,carne
 sashimi,alto,medio,alta,mariscos
-carne ,alto medio bajo,medio lento,media alta,
+carne ,alto medio bajo,medio lento,media alta,carne
 milanesa,medio alto,medio rapido,media,carne
 hilachas,medio,medio,alta,carne
 tapado de mariscos,alto,lento,alta,mariscos
@@ -23,4 +23,19 @@ ceviche de pulpo,alto,rapido,media,mariscos
 ceviche de pescado,alto,rapido,media,mariscos
 tacos Tlaquepaque,medio,medio rapido,media,pan carne
 tacos de lengua,alto,medio,media,pan carne
-
+lentejas estofadas,medio,medio,media,verduras glutenfree
+farinata genovesa,medio,alto,alta,glutenfree
+yakisoba con carne,alto,medio,alta,carne glutenfree
+cordon blue,alto,alto,alta,harina pollo
+picantones al horno con limon,medio,alta,medio,pollo
+flautas de pollo mexicanas,bajo,bajo,media,pollo
+gallina en pepitoria,alto,alto,alto,pollo
+pollo satay,bajo,medio,media,pollo
+espaguetis con pollo y bacon cremosos,medio,medio,alta,pasta pollo
+raviolis de pasta fresca casera rellenos de requesón con trufa de verano,alto,medio,alta,pasta lacteo
+tagliatelle a la carbonara,medio,alto,alta,pasta carne
+gnocchis de patata,alto,alto,alta,pasta
+lasagna de atún y verduras con bechamel,alto,alto,alta,pasta verduras mariscos
+ensalada mediterranea,medio,bajo,baja,ensalada
+ensalada dulce con quinoa,medio,bajo,baja,ensalada frutas
+ensalada de frutas al grill,bajo,bajo,baja,ensalada frutas

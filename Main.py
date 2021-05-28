@@ -64,7 +64,7 @@ while ciclo:
     print("___________________________________")
     print("Bienvenido al Sistema de Recomendacion de Alimentos")
     print("___________________________________")
-    print("1. Escoger platillos")
+    print("1. Escoger ingredientes principales")
     print("2. Escoger tiempo de entrega")
     print("3. Escoger contenido nutricional")
     print("4. Escoger precio")
@@ -216,12 +216,6 @@ while ciclo:
                             nutricionInterest.append(nutricion[i])                 
                 #aumentar
                 i=i+1
-        
-        #solo para ver
-        '''print(foodInterest)
-        print(timeInterest)
-        print(nutricionInterest)
-        print(priceInterest)'''
 
         #para el tiempo
         if(len(mytime)!=0):
@@ -278,9 +272,9 @@ while ciclo:
                 i=i+1
 
         #mostar resultado final
+        print("\n======================= RECOMENDACIONES EN BASE A SU BUSQUEDA =======================\n")
         for plato in foodInterest:
             if(plato!="0"):
-                print("\n======================= RECOMENDACIONES EN BASE A SU BUSQUEDA =======================\n")
                 print(plato)
         
     #terminar el ciclo
@@ -291,6 +285,13 @@ while ciclo:
     else:
         print("Error, Ingrese solo del 1-6")
 
-
-    
-
+    if(opcion != 5 and opcion != 6):
+        print("\n\n___________________________________")
+        print("Platillos escogidos:")
+        print(myfood)
+        print("Tiempos de Entrega escogidos:")
+        print(mytime)
+        print("Contenidos Nutrcionales escogidos:")
+        print(mynutricion)
+        print("Precios escogidos:")
+        print(myprice)
