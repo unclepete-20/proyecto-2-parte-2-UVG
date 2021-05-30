@@ -2,9 +2,9 @@ from csv import reader
 
 # Proyecto 2
 # Estructuras de Datos
-# Yong Bum Park
-# Pedro Pablo Arriola Jimenez
-# Oscar Fernando Lopez Barrios
+# Yong Bum Park 20117
+# Pedro Pablo Arriola Jimenez 20188
+# Oscar Fernando Lopez Barrios 20679
 
 # Variables que guardaran los datos de la comida 
 # y los datos elegidos por el usuario
@@ -80,6 +80,7 @@ while ciclo:
         comida = True
         while comida:
             for tipoPlatillo in platillos:
+                print("\n------- INGREDIENTES -------\n")
                 print(tipoPlatillo)
                 print("1. Agregar ingrediente a la lista")
                 print("2. Siguiente ingrediente")
@@ -120,6 +121,7 @@ while ciclo:
         tiempo = True
         while tiempo:
             for tipoTiempo in timeGeneral:
+                    print("\n------- TIEMPO DE PREPARACION -------\n")
                     print(tipoTiempo)
                     print("1. Seleccionar tiempo de preparacion")
                     print("2. Siguiente opcion")
@@ -159,6 +161,7 @@ while ciclo:
         nutri = True
         while nutri:
             for tipoNutricion in nutricionGeneral:
+                    print("\n------- CONTENIDO NUTRICIONAL -------\n")
                     print(tipoNutricion)
                     print("1. Agregar el contenido nutricional deseado a la lista")
                     print("2. Siguiente opcion de contenido nutricional")
@@ -198,6 +201,7 @@ while ciclo:
         precio = True
         while precio:
             for tipoPrecio in priceGeneral:
+                    print("\n------- PRECIO -------\n")
                     print(tipoPrecio)
                     print("1. Agregar el tipo de precio deseado a la lista")
                     print("2. Siguiente opcion de tipo de precio")
