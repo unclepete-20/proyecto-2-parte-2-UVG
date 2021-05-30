@@ -1,48 +1,54 @@
 from csv import reader
 
-#contendra todo los datos del csv
+# Proyecto 2
+# Estructuras de Datos
+# Yong Bum Park
+# Pedro Pablo Arriola Jimenez
+# Oscar Fernando Lopez Barrios
+
+# Variables que guardaran los datos de la comida 
+# y los datos elegidos por el usuario
 food =[]
 price =[]
 time =[]
 nutricion =[]
 relation =[]
 platillos=[]
+# Los distintos tipos de elecciones
 timeGeneral=["rapido","medio","lento"]
 nutricionGeneral=["alta","media","baja"]
 priceGeneral=["alto","medio","bajo"]
 
-#es para guardar lo que el consumidor desea
+# Se guarda la eleccion del usuario
 myfood =[]
 myprice =[]
 mytime=[]
 mynutricion=[]
 
-#es para el resultado final
+# Listas donde se guarda la recomendacion
 foodInterest=[]
 timeInterest=[]
 priceInterest=[]
 nutricionInterest=[]
 
-#lectura de los datos y separarlos segun su categoria
+# Se leen los datos y se separan por medio de su categoria
 with open('export.csv', 'r') as csvDataFile:    
     csvReader = reader(csvDataFile)
+    # Se crea un ciclo para agregar los parametros
     i=0
     for row in csvReader:
-        #print(row)
-        #x=row[0]
-        #y = x.split(";")
-        #print(y)
-
+        # Se agregan los parametros de busqueda
         food.append(row[0])
         price.append(row[1])
         time.append(row[2])
         nutricion.append(row[3])
         relation.append(row[4])
-        #este serivara para guardar los tipos de platillos en el platillos
+
+        #Se guardan los tipos de platillos que existen
         if(i!=0):
             foodtype = row[4].split()
             for add in foodtype:
-                #si lo contiene no lo guardara
+                # Si se contiene el tipo de platillo se guarda
                 if(list.__contains__(platillos,add)):
                     True
                 else:
@@ -50,14 +56,6 @@ with open('export.csv', 'r') as csvDataFile:
         else:
             i=i+1
 
-
-#print(food)
-#print(price)
-#print(time)
-#print(nutricion)
-#print(relation)
-#print(platillos)
-#menu
 i=0
 ciclo = True
 while ciclo:
