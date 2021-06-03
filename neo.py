@@ -127,7 +127,7 @@ if __name__ == "__main__":
     greeter.add_Precio("bajo")
 
     #para realizar la relacion entre el platillo y tiempo
-    '''for i in transaction_list:
+    for i in transaction_list:
         lista = str(i[2]).split()
         for j in lista:
             if(j==("rapido")):
@@ -135,10 +135,10 @@ if __name__ == "__main__":
             elif(j==("medio")):
                 greeter.add_time_relation("medio",str(i[0]))
             elif(j==("lento")):
-                greeter.add_time_relation("lento",str(i[0]))'''
+                greeter.add_time_relation("lento",str(i[0]))
 
     #para realizar la relacion entre platillo y precio
-    '''for i in transaction_list:
+    for i in transaction_list:
         lista = str(i[1]).split()
         for j in lista:
             if(j==("alto")):
@@ -146,7 +146,7 @@ if __name__ == "__main__":
             elif(j==("medio")):
                 greeter.add_price_relation("medio",str(i[0]))
             elif(j==("bajo")):
-                greeter.add_price_relation("bajo",str(i[0]))'''
+                greeter.add_price_relation("bajo",str(i[0]))
 
 
     #para realizar la relacion entre platillo y nutricion

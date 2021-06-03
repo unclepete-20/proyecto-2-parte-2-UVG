@@ -63,14 +63,15 @@ while ciclo:
     print("\n🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴🍴\n")
     print("Bienvenido al Sistema de Recomendacion de Alimentos")
     print("___________________________________")
-    print("Ingrese la opcion que desee:")
+    print("Tiene las siguientes opciones:")
     print("1. Recibir Recomendacion de comida")
-    print("2. ")
-    print("3. Seleccionar contenido nutricional")
-    print("4. Seleccionar precio")
-    print("5. Buscar listado de recomendaciones")
-    print("6. Salir del programa\n")
+    print("2. Agregar Nuevo Platillo")
+    print("3. Remover Platillo")
+    print("4. Salir del programa\n")
+    
+    opcionprincipal =  input("Ingrese la opcion: ")
         
+    if(opcionprincipal == 1):
         print("1. Seleccionar ingredientes principales")
         print("2. Seleccionar tiempo de entrega")
         print("3. Seleccionar contenido nutricional")
@@ -336,4 +337,6 @@ while ciclo:
             ciclo=False
         #mostrar error
         else:
-            print("Error, Ingrese solo del 1-6")
+            print("Error, Ingrese solo del 1-6") 
+        
+
