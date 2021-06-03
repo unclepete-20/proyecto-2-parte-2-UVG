@@ -1,3 +1,4 @@
+#codigo obtenido de https://neo4j.com/docs/api/python-driver/current/
 from neo4j import GraphDatabase
 import pandas as pd
 
@@ -59,6 +60,18 @@ class HelloWorldExample:
                         "SET a.message = $message "
                         "RETURN a.message + ', from node ' + id(a)", message=message)
 
+    #para los relacion de los platillos
+    def add_Relacion(self, message):
+        with self.driver.session() as session:
+            session.write_transaction(self._create_and_return_Relacion,message)
+            
+
+    @staticmethod
+    def _create_and_return_Relacion(tx,message):
+        result = tx.run("CREATE (a:Relacion) "
+                        "SET a.message = $message "
+                        "RETURN a.message + ', from node ' + id(a)", message=message)
+
     #para realizar la relacion entre paltillo y tiempo
     def add_time_relation(self, message1, message2):
         with self.driver.session() as session:
@@ -68,7 +81,7 @@ class HelloWorldExample:
     def create_time_relation(tx, message1, message2):
         query = (
             "MATCH (p1:Tiempo {message : $message1}), (p2:Platillos {message: $message2})"
-            "CREATE (p1)-[:relacion]->(p2) "
+            "CREATE (p1)-[:tiempo]->(p2) "
             "RETURN p1, p2"
         )
         result = tx.run(query, message1=message1, message2=message2)
@@ -82,7 +95,7 @@ class HelloWorldExample:
     def create_price_relation(tx, message1, message2):
         query = (
             "MATCH (p1:Precio {message : $message1}), (p2:Platillos {message: $message2})"
-            "CREATE (p1)-[:relacion]->(p2) "
+            "CREATE (p1)-[:precio]->(p2) "
             "RETURN p1, p2"
         )
         result = tx.run(query, message1=message1, message2=message2)
@@ -96,12 +109,27 @@ class HelloWorldExample:
     def create_nutricion_relation(tx, message1, message2):
         query = (
             "MATCH (p1:Nutricion {message : $message1}), (p2:Platillos {message: $message2})"
-            "CREATE (p1)-[:relacion]->(p2) "
+            "CREATE (p1)-[:nutricion]->(p2) "
+            "RETURN p1, p2"
+        )
+        result = tx.run(query, message1=message1, message2=message2)
+
+    #para realizar la relacion entre paltillo y relacion
+    def add_relation_relation(self, message1, message2):
+        with self.driver.session() as session:
+            session.write_transaction(self.create_relation_relation,message1,message2)
+
+    @staticmethod
+    def create_relation_relation(tx, message1, message2):
+        query = (
+            "MATCH (p1:Relacion {message : $message1}), (p2:Platillos {message: $message2})"
+            "CREATE (p1)-[:ingrediente]->(p2) "
             "RETURN p1, p2"
         )
         result = tx.run(query, message1=message1, message2=message2)
 
 
+#main que correra todo para subir al neo4j
 if __name__ == "__main__":
     greeter = HelloWorldExample("bolt://34.205.171.52:7687", "neo4j", "light-mirrors-plants")
     df = pd.read_csv("export.csv")
@@ -126,13 +154,18 @@ if __name__ == "__main__":
     greeter.add_Precio("medio")
     greeter.add_Precio("bajo")
 
+
     #agregar las relaciones de los alimentos
-    data = str(i[4]).split()
-    for j in data:
-        if(not relacion.__contains__(j)):
-            relacion.append(j)
-        
-            
+    relacion =[]
+    for i in transaction_list:
+        data = str(i[4]).split()
+        for j in data:
+            if(not relacion.__contains__(j)):
+                relacion.append(j)
+
+    #agregar las relaciones como nodos al neo4j
+    for i in relacion:
+        greeter.add_Relacion(i)       
 
     #para realizar la relacion entre platillo y tiempo        
     for i in transaction_list:
@@ -167,5 +200,13 @@ if __name__ == "__main__":
                 greeter.add_nutricion_relation("media",str(i[0]))
             elif(j==("baja")):
                 greeter.add_nutricion_relation("baja",str(i[0]))
+
+     #para realizar la relacion entre platillo y relacion
+    for i in transaction_list:
+        lista = str(i[4]).split()
+        for j in lista:
+            for k in relacion:
+                if(j==k):
+                    greeter.add_relation_relation(j,str(i[0]))
 
     greeter.close()
