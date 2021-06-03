@@ -126,7 +126,17 @@ if __name__ == "__main__":
     greeter.add_Precio("medio")
     greeter.add_Precio("bajo")
 
-    #para realizar la relacion entre el platillo y tiempo
+    #agregar las relaciones de los alimentos
+
+
+    #para realizar la rel transaction_list:
+    data = str(i[4]).split()
+    for j in data:
+        if(relacion.__contains__(j)):
+                
+        else:
+            relacion.append(j)
+            
     for i in transaction_list:
         lista = str(i[2]).split()
         for j in lista:
