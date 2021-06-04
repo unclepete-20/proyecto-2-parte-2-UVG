@@ -1,5 +1,6 @@
 from csv import reader
 from neo import HelloWorldExample
+import sys
 
 # Proyecto 2
 # Estructuras de Datos
@@ -360,19 +361,160 @@ def menu_function(indice_user_recieved):
         
         #Opcion para poder agregar un nuevo platillo a la base de datos.
         elif(int(opcionprincipal) == 2):
-            print("Ingresa el nombre del platillo que deseas eliminar:")
+            
+            nombre = ""
+            precio = ""
+            tiempo = ""
+            nutricion = ""
+            relacion = ""
+            opcion = ""
+            
+            print("Ingresa el nombre del platillo que desea agregar:\n")
             nombre = input("")
+            nombre.lower()
+            
+            print("Ingresa el precio del platillo que desea agregar:")
+            print("1. Bajo")
+            print("2. Medio")
+            print("3. Alto\n")
+
+            verificador = False
+
+            while(verificador == False):
+
+                if(opcion == "1"):
+                    precio = "bajo"
+                    verificador = True
+                elif(opcion == "2"):
+                    precio = "medio"
+                    verificador = True
+                elif(opcion == "3"):
+                    precio = "alto"
+                    verificador = True
+                else:
+                    print("\nOpcion no valida, ingrese uno existente\n")
+
+                
+            print("Ingresa el tiempo de preparacion del platillo que desea agregar:")
+            print("1. Lento")
+            print("2. Medio")
+            print("3. Rapido\n")
+
+            verificador = False
+
+            while(verificador == False):
+                opcion = input("")
+                
+                if(opcion == "1"):
+                    tiempo = "lento"
+                    verificador = True
+                elif(opcion == "2"):
+                    tiempo = "medio"
+                    verificador = True
+                elif(opcion == "3"):
+                    tiempo = "rapido"
+                    verificador = True
+                else:
+                    print("\nOpcion no valida, ingrese uno existente\n")
+
+            
+            
+            print("Ingresa el contenido nutricional del platillo que desea agregar:")
+            print("1. Baja")
+            print("2. Medio") #Puede que en esta parte haya error.
+            print("3. Alta\n")
+
+            verificador = False
+
+            while(verificador == False):
+                opcion = input("")
+
+                if(opcion == "1"):
+                    nutricion = "baja"
+                    verificador = True
+                elif(opcion == "2"):
+                    nutricion = "medio"
+                    verificador = True
+                elif(opcion == "3"):
+                    nutricion = "alta"
+                    verificador = True
+                else:
+                    print("\nOpcion no valida, ingrese uno existente\n")
+            
+            
+            print("Ingresa la relacion de su platillo que desea agregar:")
+            print("1. Carne")
+            print("2. Pasta")
+            print("3. Ensalada")
+            print("4. Tacos")
+            print("5. Pan")
+            print("6. Pollo")
+            print("7. Glutenfree")
+            print("8. Verduras")
+            print("9. Frutas")
+            print("10. Lacteo")
+            print("11. Mousse")
+            print("12. Chocolate")
+            print("13. Mariscos\n")
+            opcion = input("")
+
+            verificador = False
+
+            while(verificador == False):
+
+                if(opcion == "1"):
+                    relacion = "carne"
+                    verificador = True
+                elif(opcion == "2"):
+                    relacion = "pasta"
+                    verificador = True
+                elif(opcion == "3"):
+                    relacion = "ensalada"
+                    verificador = True
+                elif(opcion == "4"):
+                    relacion = "tacos"
+                    verificador = True
+                elif(opcion == "5"):
+                    relacion = "pan"
+                    verificador = True
+                elif(opcion == "6"):
+                    relacion = "pollo"
+                    verificador = True
+                elif(opcion == "7"):
+                    relacion = "glutenfree"
+                    verificador = True
+                elif(opcion == "8"):
+                    relacion = "verduras"
+                    verificador = True
+                elif(opcion == "9"):
+                    relacion = "frutas"
+                    verificador = True
+                elif(opcion == "10"):
+                    relacion = "lacteo"
+                    verificador = True
+                elif(opcion == "11"):
+                    relacion = "mousse"
+                    verificador = True
+                elif(opcion == "12"):
+                    relacion = "chocolate"
+                    verificador = True
+                elif(opcion == "13"):
+                    relacion = "mariscos"
+                    verificador = True
+                else:
+                    print("\nOpcion no valida, ingrese uno existente\n")
+            
 
 
         #Opcion para poder eliminar un registro de la base de datos.
         elif(int(opcionprincipal) == 3):
-            print("Ingresa el nombre del platillo que deseas eliminar:")
+            print("Ingresa el nombre del platillo que desea eliminar:")
             nombre = input("")
             HelloWorldExample.delete_relationship(greeter, nombre)
 
         elif(int(opcionprincipal) == 4):
             print("🍴 Gracias por utilizar el sistema de recomendaciones 🍴")
-            menu = False
+            sys.exit()
     
 
 # Se crea el ciclo para el menu
