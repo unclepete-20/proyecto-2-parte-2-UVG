@@ -258,6 +258,7 @@ def menu_function(indice_user_recieved):
                 print(mynutricion)
                 print("Precios escogidos:")
                 print(myprice)
+                
 
             #buscar platillos que satisfacen con lo que se desea
             elif(opcion=="5"):
